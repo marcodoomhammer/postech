@@ -1,0 +1,17 @@
+{
+  "platform": "Linux-6.18.44-x86_64-with-glibc2.39",
+  "transport": "FastAPI TestClient / ASGI em processo; servidor TCP n\u00e3o testado neste ambiente",
+  "health": {
+    "status": "ok",
+    "model_loaded": true
+  },
+  "predict_status": 200,
+  "prediction": {
+    "churn_probability": 0.8021375859868237,
+    "churn_prediction": 1,
+    "threshold": 0.5,
+    "model_name": "logistic_regression"
+  },
+  "swagger_status": 200,
+  "openapi_status": 200
+}

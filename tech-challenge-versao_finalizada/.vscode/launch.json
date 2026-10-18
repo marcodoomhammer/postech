@@ -1,0 +1,26 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "API FastAPI",
+      "type": "debugpy",
+      "request": "launch",
+      "module": "uvicorn",
+      "args": [
+        "churn.api:app",
+        "--host",
+        "127.0.0.1",
+        "--port",
+        "8000"
+      ],
+      "justMyCode": true
+    },
+    {
+      "name": "Treinar modelos",
+      "type": "debugpy",
+      "request": "launch",
+      "module": "churn.train",
+      "justMyCode": true
+    }
+  ]
+}

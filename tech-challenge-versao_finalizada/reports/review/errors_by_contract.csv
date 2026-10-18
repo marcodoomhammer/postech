@@ -1,0 +1,4 @@
+Contract,n,churns,negatives,false_positives,false_negatives,false_positive_rate,false_negative_rate
+Month-to-month,776,324,452,257,34,0.5685840707964602,0.10493827160493827
+One year,308,37,271,19,32,0.07011070110701106,0.8648648648648649
+Two year,325,13,312,0,13,0.0,1.0

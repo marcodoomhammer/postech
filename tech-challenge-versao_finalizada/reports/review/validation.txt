@@ -1,0 +1,12 @@
+Resumo da validação executada nesta revisão
+
+Ambiente: Linux, Python 3.12.14, dependências diretas de requirements.txt.
+Comando: PYTHONPATH=churn-tech-challenge/src tmp/churn-review-venv/bin/python -m pytest churn-tech-challenge/tests -q
+Resultado observado: 13 passed, 1 warning in 3.80s.
+Aviso: StarletteDeprecationWarning: Using httpx with starlette.testclient is deprecated; install httpx2 instead.
+
+Notebooks 02 e 03: todas as células executadas com sucesso em processo; saídas incluídas.
+Cenários de API do notebook 03: oito, todos com status esperado.
+Tentativa com kernel Jupyter: bloqueada por restrição de sockets; alternativa --in-process usada.
+Servidor TCP, Swagger no navegador e execução no Windows: não conferidos nesta revisão.
+As seis verificações da primeira entrega continuam registradas em reports/test_results.txt como evidência histórica daquela versão.

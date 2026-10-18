@@ -1,0 +1,169 @@
+[
+  {
+    "scenario": "Cliente válido",
+    "expected_status": 200,
+    "actual_status": 200,
+    "response": {
+      "churn_probability": 0.8021375859868237,
+      "churn_prediction": 1,
+      "threshold": 0.5,
+      "model_name": "logistic_regression"
+    }
+  },
+  {
+    "scenario": "TotalCharges omitido",
+    "expected_status": 200,
+    "actual_status": 200,
+    "response": {
+      "churn_probability": 0.8421586537841932,
+      "churn_prediction": 1,
+      "threshold": 0.5,
+      "model_name": "logistic_regression"
+    }
+  },
+  {
+    "scenario": "tenure omitido",
+    "expected_status": 422,
+    "actual_status": 422,
+    "response": {
+      "detail": [
+        {
+          "type": "missing",
+          "loc": [
+            "body",
+            "tenure"
+          ],
+          "msg": "Field required",
+          "input": {
+            "gender": "Female",
+            "SeniorCitizen": 0,
+            "Partner": "Yes",
+            "Dependents": "No",
+            "PhoneService": "No",
+            "MultipleLines": "No phone service",
+            "InternetService": "DSL",
+            "OnlineSecurity": "No",
+            "OnlineBackup": "Yes",
+            "DeviceProtection": "No",
+            "TechSupport": "No",
+            "StreamingTV": "No",
+            "StreamingMovies": "No",
+            "Contract": "Month-to-month",
+            "PaperlessBilling": "Yes",
+            "PaymentMethod": "Electronic check",
+            "MonthlyCharges": 29.85,
+            "TotalCharges": 29.85
+          }
+        }
+      ]
+    }
+  },
+  {
+    "scenario": "tenure negativo",
+    "expected_status": 422,
+    "actual_status": 422,
+    "response": {
+      "detail": [
+        {
+          "type": "greater_than_equal",
+          "loc": [
+            "body",
+            "tenure"
+          ],
+          "msg": "Input should be greater than or equal to 0",
+          "input": -1,
+          "ctx": {
+            "ge": 0
+          }
+        }
+      ]
+    }
+  },
+  {
+    "scenario": "Contrato desconhecido",
+    "expected_status": 422,
+    "actual_status": 422,
+    "response": {
+      "detail": [
+        {
+          "type": "literal_error",
+          "loc": [
+            "body",
+            "Contract"
+          ],
+          "msg": "Input should be 'Month-to-month', 'One year' or 'Two year'",
+          "input": "Mensal",
+          "ctx": {
+            "expected": "'Month-to-month', 'One year' or 'Two year'"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "scenario": "Alvo enviado por engano",
+    "expected_status": 422,
+    "actual_status": 422,
+    "response": {
+      "detail": [
+        {
+          "type": "extra_forbidden",
+          "loc": [
+            "body",
+            "Churn"
+          ],
+          "msg": "Extra inputs are not permitted",
+          "input": "Yes"
+        }
+      ]
+    }
+  },
+  {
+    "scenario": "Serviços incompatíveis",
+    "expected_status": 422,
+    "actual_status": 422,
+    "response": {
+      "detail": [
+        {
+          "type": "value_error",
+          "loc": [
+            "body"
+          ],
+          "msg": "Value error, MultipleLines incompatível com PhoneService",
+          "input": {
+            "gender": "Female",
+            "SeniorCitizen": 0,
+            "Partner": "Yes",
+            "Dependents": "No",
+            "tenure": 1,
+            "PhoneService": "No",
+            "MultipleLines": "Yes",
+            "InternetService": "DSL",
+            "OnlineSecurity": "No",
+            "OnlineBackup": "Yes",
+            "DeviceProtection": "No",
+            "TechSupport": "No",
+            "StreamingTV": "No",
+            "StreamingMovies": "No",
+            "Contract": "Month-to-month",
+            "PaperlessBilling": "Yes",
+            "PaymentMethod": "Electronic check",
+            "MonthlyCharges": 29.85,
+            "TotalCharges": 29.85
+          },
+          "ctx": {
+            "error": {}
+          }
+        }
+      ]
+    }
+  },
+  {
+    "scenario": "Modelo ausente",
+    "expected_status": 503,
+    "actual_status": 503,
+    "response": {
+      "detail": "Modelo indisponível. Execute python -m churn.train e reinicie a API."
+    }
+  }
+]

@@ -1,0 +1,11 @@
+{
+  "seed": 42,
+  "python": "3.12.14",
+  "sklearn": "1.8.0",
+  "dataset_sha256": "16320c9c1ec72448db59aa0a26a0b95401046bef5d02fd3aeb906448e3055e91",
+  "fit_rows": 4225,
+  "validation_rows": 1409,
+  "reserved_rows": 1409,
+  "validation_roc_auc": 0.8362435092614119,
+  "scope": "Explora\u00e7\u00e3o na valida\u00e7\u00e3o interna; campe\u00e3o e teste final preservados"
+}
