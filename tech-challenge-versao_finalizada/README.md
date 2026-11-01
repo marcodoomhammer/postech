@@ -1,5 +1,7 @@
 # Tech Challenge — Pipeline Preditivo de Churn
 
+# Pesquisa e Realização do Grupo formado por: Marco Antônio de Souza e Gilson Viana Corrêa. Grupo 56 do Tech Challenge
+
 Projeto acadêmico: EDA, baseline de Regressão Logística, Random Forest, MLPClassifier, validação cruzada, seleção do campeão, API REST e testes automatizados.
 
 **Resultado da execução incluída:** campeão Regressão Logística; ROC-AUC de teste **0,8413**, F1 **0,6136**, recall **0,7834**. O CSV real de demonstração IBM tem 7.043 clientes. Esses resultados são offline; não comprovam redução de churn em produção.
