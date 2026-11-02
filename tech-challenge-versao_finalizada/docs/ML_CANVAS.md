@@ -1,7 +1,7 @@
 # ML Canvas — Retenção de clientes de telecom
 
 | Elemento | Definição |
-|---|---|
+|------------------------------------------------------------------------------------------------------|
 | Problema | Priorizar clientes com maior risco de cancelamento para apoiar campanhas de retenção. |
 | Stakeholders | Diretoria, CRM/marketing, atendimento, engenharia de dados, equipe de ML, jurídico e clientes. |
 | Usuário | Analista de CRM consultando scores para montar uma campanha. |
@@ -20,6 +20,6 @@
 | Restrições | Dados de demonstração; sem custos reais, datas de observação ou efeito de campanhas. |
 | Implantação | API FastAPI local; nuvem opcional fora desta entrega. |
 | Monitoramento proposto | Validação de schema, latência, taxa de erro, drift de entradas e performance por coorte/grupo após chegada dos rótulos. |
-| Responsáveis | Preencher nomes e papéis em CONTRIBUTIONS.md. |
+
 
 Não é possível inferir benefício causal ou financeiro apenas pelo score. Em produção, definir uma data de referência e horizonte futuro de cancelamento antes de coletar o dataset.

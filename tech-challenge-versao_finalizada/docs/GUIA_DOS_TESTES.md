@@ -31,8 +31,8 @@ Os testes parametrizados conferem o campo informado no erro. Isso ajuda quem con
 .\.venv\Scripts\python.exe -m pytest -v
 ```
 
-Resultado da revisão: **13 passed**. Houve um aviso de depreciação da integração de TestClient/Starlette com httpx no ambiente instalado. Ele não falhou os testes; está registrado em `reports/review/validation.txt`. Não foram alteradas as dependências para resolver esse aviso nesta revisão.
+Resultado da revisão: **13 passed**. Houve um aviso de depreciação da integração de TestClient/Starlette com http no ambiente instalado. Ele não falhou os testes; está registrado em `reports/review/validation.txt`. Não foram alteradas as dependências para resolver esse aviso nesta revisão.
 
 ## Limites
 
-Esta suíte não mede latência de rede, segurança de produção, qualidade do ranking ou ganho financeiro. As métricas de ML e os experimentos ficam nos relatórios e notebooks. Os oito cenários do notebook 03 são uma demonstração adicional, não oito testes pytest extras.
+Esta suíte não mede latência de rede, segurança de produção, qualidade do ranking ou ganho financeiro. As métricas de ML e os experimentos ficam nos relatórios e notebooks. Os oito cenários do notebook 03 são uma demonstração adicional.

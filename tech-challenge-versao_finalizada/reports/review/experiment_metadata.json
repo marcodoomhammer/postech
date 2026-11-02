@@ -1,6 +1,6 @@
 {
   "seed": 42,
-  "python": "3.12.14",
+  "python": "3.13.15",
   "sklearn": "1.8.0",
   "dataset_sha256": "16320c9c1ec72448db59aa0a26a0b95401046bef5d02fd3aeb906448e3055e91",
   "fit_rows": 4225,
